@@ -29,7 +29,7 @@ for i, match_id in enumerate(matches['match_id'], start=1):
     events_path = f"data/events/{match_id}.pkl"
     lineups_path = f"data/lineups/{match_id}.pkl"
     if os.path.exists(events_path) and os.path.exists(lineups_path):
-        continute
+        continue
     sb.events(match_id=match_id).to_pickle(events_path)
     pd.to_pickle(sb.lineups(match_id=match_id), lineups_path)
     print(f"{i}/{len(matches)} saved match {match_id}")
